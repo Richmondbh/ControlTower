@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ControlTower
 {
-    public class ControlTower
+    public class AirportControlTower
     {
         // List managing all registered airplanes
         private List<Airplane> airplanes;
@@ -18,7 +18,7 @@ namespace ControlTower
         public event EventHandler<AirplaneEventArgs> LandedNotification;
         public event EventHandler<FlightHeightEventArgs> FlightHeightNotification;
 
-        public ControlTower()
+        public AirportControlTower()
         {
             airplanes = new List<Airplane>();
         }

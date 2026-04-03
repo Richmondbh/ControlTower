@@ -5,8 +5,90 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ControlTower"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="740" Width="840">
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto" MinHeight="19.04"/>
+            <RowDefinition Height="180"/>
+        </Grid.RowDefinitions>
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--  INPUT PANEL  -->
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Margin="0,0,12,2">
+
+            <Label Content="Airplane Name" Margin="0,0,0,2"/>
+            <TextBox x:Name="txtName" Margin="0,0,0,8" Padding="4"/>
+
+            <Label Content="Flight ID" Margin="0,0,0,2"/>
+            <TextBox x:Name="txtFlightId" Margin="0,0,0,8" Padding="4"/>
+
+            <Label Content="Destination" Margin="0,0,0,2"/>
+            <TextBox x:Name="txtDestination" Margin="0,0,0,8" Padding="4"/>
+
+            <Label Content="Flight Time (hours)" Margin="0,0,0,2"/>
+            <TextBox x:Name="txtFlightTime" Margin="0,0,0,16" Padding="4"/>
+
+            <Button x:Name="BtnAddPlane"
+                    Content="Add Plane"
+                    Padding="0,6"
+                    Margin="0,0,0,6"
+                    Click="BtnAddPlane_Click"/>
+
+            <Button x:Name="BtnTakeOff"
+                    Content="Take Off"
+                    Padding="0,6"
+                    Margin="0,0,0,6"
+                    Click="BtnTakeOff_Click"/>
+
+            <Button x:Name="BtnRemovePlane"
+                    Content="Remove Flight"
+                    Padding="0,6"
+                    Margin="0,0,0,16"
+                    Click="BtnRemovePlane_Click"/>
+
+            <!-- Altitude section -->
+            <Label Content="Altitude Change (ft)" Margin="0,0,0,2"/>
+            <TextBox x:Name="txtAltitudeChange" Margin="0,0,0,8" Padding="4"/>
+            <Button x:Name="BtnChangeAltitude"
+                    Content="Change Altitude"
+                    Padding="0,6"
+                    Click="BtnChangeAltitude_Click"/>
+
+        </StackPanel>
+
+        <!--AIRPLANE LIST -->
+        <Label Grid.Row="0" Grid.Column="1" Content="Registered Flights" Margin="0,0,0,460" Grid.RowSpan="3"/>
+
+        <ListView x:Name="lstAirplanes"
+                  Grid.Row="1" Grid.Column="1"
+                  Grid.RowSpan="2"
+                  Margin="0,-17,10,110"
+                  FontFamily="Courier New"
+                  FontSize="12"
+                  SelectionChanged="LstAirplanes_SelectionChanged"/>
+
+        <!-- STATUS LOG -->
+        <Label Grid.Row="2" Grid.Column="0"
+               Grid.ColumnSpan="2"
+               Content="Status Log" Margin="0,473,0,167" Grid.RowSpan="3"/>
+
+        <TextBox x:Name="txtLog"
+                 Grid.Row="4"
+                 Grid.Column="0"
+                 Grid.ColumnSpan="2"
+                 IsReadOnly="True"
+                 TextWrapping="Wrap"
+                 VerticalScrollBarVisibility="Auto"
+                 FontFamily="Courier New"
+                 FontSize="12"
+                 Padding="6"
+                 VerticalContentAlignment="Top" Margin="0,2,0,0"/>
     </Grid>
 </Window>
