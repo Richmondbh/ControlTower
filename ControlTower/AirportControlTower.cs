@@ -36,7 +36,7 @@ namespace ControlTower
             SubscribeToAirplaneEvents(airplane);
         }
 
-        // Removes a grounded airplane from the list (Grade A)
+        // Removes a grounded airplane from the list
         public bool RemoveAirplane(int index)
         {
             if (!ControlIndex(index))

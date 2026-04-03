@@ -44,6 +44,7 @@ namespace ControlTower.Models
         //Gets or sets the airplane name.
         public string Name
         {
+
             get { return name; }
             set { name = value; }
         }
