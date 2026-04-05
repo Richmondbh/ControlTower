@@ -12,6 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml.Linq;
 
+
 namespace ControlTower
 {
     /// <summary>
@@ -127,7 +128,7 @@ namespace ControlTower
             LogMessage("Flight removed from the system.");
         }
 
-        private void LstAirplanes_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        private void LstAirplanes_SelectionChanged(object sender,SelectionChangedEventArgs e)
         {
             UpdateTextBoxes();
         }
@@ -146,7 +147,8 @@ namespace ControlTower
         {
             UpdateListViewAirplanes();
 
-            // -1 means the plane was not airborne when the command was issued
+            // -1 means the plane was not airborne when the command was issued.
+            // I did not want to create a property like:  public bool IsAirborne 
             if (e.NewAltitude == -1)
                 LogMessage($"{e.FlightNumber} is not airborne so altitude command was ignored.");
             else
